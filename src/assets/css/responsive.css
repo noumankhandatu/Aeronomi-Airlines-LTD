@@ -1,0 +1,359 @@
+@media (max-width: 1440px) {
+    .side-nav ul li .call {
+        position: relative;
+        padding-left: 15px;
+        margin-right: 0px;
+    }
+    .side-nav ul li:nth-child(2) {
+    padding-left: 5px;
+    margin-left: 0px;
+    }
+    .side-nav ul li .nav-srh .search-icon {
+        font-size: 17px;
+    }
+    .side-nav ul li .call a {
+        display: block;
+    }
+    .side-nav {
+        padding: 25px 20px;
+        width: 240px;
+        display: inline-table;
+    }
+    .main-nav nav .navbar-brand {
+        background-color: #fff;
+        display: inline-block;
+        padding: 26px 33px;
+        height: 120px;
+    }
+    .transTics-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu {
+        left: -98%;
+    }
+ 
+}
+
+@media (max-width: 1199px) {
+ 
+    .banner-text-two h1 {
+        font-size: 50px;
+    }
+    .banner-text h1 {
+        font-size: 50px;
+    }
+ 
+    .side-nav{
+        display: none;
+    }
+    .main-nav nav .navbar-nav .nav-item .dropdown-menu li .dropdown-menu {
+        right: 249px;
+        left: auto;
+    }
+  }
+
+@media (max-width: 992px) {
+    .track_order_banner{
+        margin-left: 0px;
+        margin-top: 40px;
+    }
+    .responsive-button {
+        position: absolute;
+        right: 22px;
+        top: 25px;
+        font-size: 36px;
+    }
+    .transTics-nav .navbar .navbar-nav .nav-item:first-child {
+        margin-left:15px;
+    }
+    .navbar-nav, .transtics-responsive-nav {
+        display: block;
+    }
+    .mean-menu {
+        display: none;
+        position: absolute;
+        top: 0;
+        z-index: 999;
+        background: #fff;
+        width: 75%;
+        transition: .4s all ease-in-out;
+        -webkit-transition: .4s all ease-in-out;
+        -moz-transition: .4s all ease-in-out;
+        -ms-transition: .4s all ease-in-out;
+        -o-transition: .4s all ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+        animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+        box-shadow: 0 0px 7px -2px #0000002b;
+}
+    .navber-colpes{
+        display: block;
+        top: 117px;
+        opacity: 1;
+      visibility: visible;
+    }
+    .transTics-nav .navbar .navbar-nav .nav-item a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .transTics-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu {
+        left: 53px;
+        top: 37px;
+    }
+    .left-info{
+        text-align: center;
+    }
+    .right-info{
+        text-align: center !important;
+    }
+    .banner-item-two {
+        padding-top: 115px;
+    }
+    .track_oreder_banner {
+        margin-left:0px;
+        margin-top: 40px;
+    }
+    .about_service_text{
+        padding-top: 30px;
+    }
+    .search-toggle a i{
+        display: block !important;
+    }
+    .centered {
+        width: 82%;
+    }
+    .footer_wedget {
+        padding-top: 40px;
+    }
+    #footer_area .row .col-lg-4:nth-child(1) .footer_wedget{
+        padding-top: 0;
+    }
+    #shipment button {
+        font-size: 15px;
+     }
+     .about_content{
+         padding-top: 30px;
+     }
+     .counter_area {
+        justify-content: left;
+        margin-bottom: 30px;
+    }
+   .about_counter_area .row .col-lg-4:last-child .counter_arae{
+        margin-bottom: 0;
+    }
+    .maps-right-side-text{
+        padding-top: 30px;
+    }
+    .service_cal_img{
+        padding-top: 30px;
+        text-align: center;
+    }
+    .subscribe_img{
+        display: none;
+    }
+    #subscribe_area {
+        padding: 100px 0;
+    }
+    #news_blog_area  .slides-tab {
+        margin-bottom: 30px;
+    }
+    #news_blog_area .row:last-child .col-lg-4:last-child .slides-tab {
+        margin-bottom: 0px;
+    }
+   #our_mission_vission .row .col-lg-6:last-child .our_mission_vission_area{
+    padding-top: 30px;
+    }
+    .service_details_sidebar{
+        padding-top: 50px;
+    }
+    .blog_sidebar_wrapper {
+        padding-top: 40px;
+    }
+    #partner_area_slider .row .col-lg-4{
+        display: none;
+    }
+    .blog_wrapper{
+        margin-bottom: 30px;
+    }
+    .section_heading_center h2 {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .contact_info_wrapper{
+        margin-top: 30px;
+    }
+  
+}
+
+@media (max-width: 767px) {
+   
+    .advantages_icons img {
+        padding-top: 20px;
+    }
+    .map_area{
+        padding-top: 50px;
+    }
+    .blog_single_tags_bottom{
+        display: inherit;
+    }
+    .shared_post{
+        padding-top: 10px;
+    }
+    .banner-text-two h1 {
+        font-size: 40px;
+    }
+    .banner-item-two {
+        padding-top: 145px;
+    }
+    .faqs_form_heading h3{
+        font-size: 18px;
+        }
+        .inner_banner_text h2 {
+            font-size: 30px;
+        }
+  /*-- Navbar --*/
+  .transtics-responsive-nav .logo a img {
+    width: 35%;
+}
+  .side-nav {
+    position: absolute;
+    top: 8px;
+    right: 75px;
+  }
+  .side-nav ul {
+    display: block !important;
+  }
+  .side-nav ul li {
+    position: unset !important;
+    float: unset !important;
+    width: unset !important;
+  }
+  .side-nav ul li:nth-child(2) {
+    border-left: 0;
+    padding-left: 0;
+    margin-left: 0;
+  }
+  .side-nav ul li .call {
+    display: none;
+  }
+  .side-nav ul li .nav-srh {
+    top: 1px;
+  }
+  .side-nav ul li .nav-srh .search-area {
+    right: -85px;
+  }
+  .side-nav ul li .nav-srh .search-area .src-input {
+    width: 210px;
+  }
+  .side-nav ul li .nav-srh .search-area .search-icon {
+    top: 28px;
+  }
+  .side-nav ul li .nav-srh .search-area.opened {
+    padding: 15px 18px;
+  }
+  .side-nav ul li .modal-btn {
+    background-color: transparent;
+    padding: 0;
+  }
+  .side-nav ul li .modal-btn span {
+    background-color: var(--white-color);
+  }
+  .advantages_items {
+    display: inherit;
+}
+.advantages_text {
+    padding-left:0px;
+}
+.advantages_icons {
+    background: var(--main-theme-color);
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    line-height: 77px;
+    margin-bottom: 30px;
+}
+.our_advantages_inner {
+    margin-bottom: 100px;
+    padding: 40px 28px;
+}
+.heading-left-border h2 {
+    font-size: 30px;
+}
+#our_advantages_area {
+    background-position: 100%;
+}
+.section_heading_center p {
+    width: 100%;
+}
+.social_banner_links{
+    display: none;
+}
+#homeTwo_banner .owl-theme .owl-nav .owl-prev, #homeTwo_banner .owl-theme .owl-nav .owl-next {
+    top: 59%;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.slider_two_text p {
+    width: 100%;
+    margin: 0 auto;
+}
+}
+
+@media (max-width: 576px) {
+    .banner-text-two h1 {
+        font-size: 30px; 
+    }
+    
+    #service_details_area, #services_page, #testimonial_homeTwo, #maps_area_common,
+     #counter_area_main, #service_about , #news_blog_area,#sevice_calcultator_area, 
+     #logistics_area, #schedule_one, #footer_area, #our_mission_vission,
+      #home_about_area, #team_area, #gallery_area, #faqs_area, #track_shipment_area,
+       #privacy_policy, #contact_area_main, #home_pricing_area, #request_quote_form_area {
+    padding: 80px 0;
+}
+#maps_area {
+    padding: 50px 0 80px 0;
+}
+#home_two_service {
+    padding: 80px 0;
+}
+#client_logo_area {
+    padding-bottom: 80px;
+    margin-top: 70px;
+}
+#client_review_area {
+    padding: 80px 0 0;
+}
+.mean-menu {
+    width: 88%;
+    left: 25px;
+}
+}
+
+@media (max-width: 480px) {
+    .transTics-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu {
+        left: 0px;
+        top: 37px;
+    }
+    .transtics-responsive-nav .logo a img {
+        width: 40%;
+    }
+    #schedule_one .nav-tabs .nav-link {
+        width: 100%;
+    }
+    #schedule_one .nav-tabs .nav-link.nav-one {
+        border-radius:0;
+        -webkit-border-radius:0;
+        -moz-border-radius:0;
+        -ms-border-radius:0;
+        -o-border-radius:0;
+}
+#schedule_one .nav-tabs .nav-link.nav-two {
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+}
+}
