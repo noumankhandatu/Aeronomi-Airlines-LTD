@@ -31,10 +31,8 @@ import Error from "./page/Error";
 import Contact from "./page/Contact";
 import PricingContent from "./page/Pricing";
 import RequestQuote from "./page/RequestQuote";
-
 // Import ScrollToTop Components
 import ScrollToTop from "./component/ScrollToTop";
-
 const App = () => {
   return (
     <>

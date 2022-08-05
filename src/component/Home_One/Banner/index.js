@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 //  OwlCarousel Slider Import
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import api from "../../../prismicApi";
+import Prismic from "prismic-javascript";
 
 const HomeBanner = () => {
   let responsive = {
@@ -20,6 +22,24 @@ const HomeBanner = () => {
       items: 1,
     },
   };
+  const [toggleFn, setToggleFn] = useState(true);
+  const [fetchData, setFetchData] = useState("");
+  async function getServerSideProps() {
+    const client = Prismic.client(api);
+    client
+      .query([Prismic.Predicates.at("document.type", "home")])
+      .then((res) => {
+        setFetchData(res.results);
+      })
+      .catch((err) => {
+        console.log("err is ", err);
+      });
+  }
+  if (toggleFn) {
+    getServerSideProps();
+    setToggleFn(!toggleFn);
+  }
+  console.log(fetchData, "data is here");
   return (
     <>
       <section id="homeOne_banner">

@@ -1,3 +1,24 @@
+ const [toggleFn, setToggleFn] = useState(true);
+  const [fetchData, setFetchData] = useState("");
+  async function getServerSideProps() {
+    const client = Prismic.client(api);
+    client
+      .query([Prismic.Predicates.at("document.type", "home")])
+      .then((res) => {
+        setFetchData(res.results);
+      })
+      .catch((err) => {
+        console.log("err is ", err);
+      });
+  }
+  if (toggleFn) {
+    getServerSideProps();
+    setToggleFn(!toggleFn);
+  }
+  console.log(fetchData, "data is here");
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
