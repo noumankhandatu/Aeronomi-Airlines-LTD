@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 //  OwlCarousel Slider Import
 import OwlCarousel from "react-owl-carousel";
@@ -29,7 +29,7 @@ const HomeBanner = () => {
     client
       .query([Prismic.Predicates.at("document.type", "home")])
       .then((res) => {
-        setFetchData(res.results);
+        setFetchData(res);
       })
       .catch((err) => {
         console.log("err is ", err);
@@ -39,7 +39,53 @@ const HomeBanner = () => {
     getServerSideProps();
     setToggleFn(!toggleFn);
   }
-  console.log(fetchData, "data is here");
+  const mapper = fetchData?.results?.map((items) => {
+    return items?.data?.body[0]?.items;
+  });
+  const firstCaroBtnText = mapper?.map((items) => {
+    return items[0].buttontext;
+  });
+
+  const firstCaroImageOne = mapper?.map((items) => {
+    return items[0].image1.url;
+  });
+  const firstCaroBtnDes = mapper?.map((items) => {
+    return <span>{items[0].description}</span>;
+  });
+  const firstCaroBtnTitle = mapper?.map((items) => {
+    return <span>{items[0].title1}</span>;
+  });
+
+  const SecondCaroImageOne = mapper?.map((items) => {
+    return items[1].image1.url;
+  });
+  const SecondCaroBtnText = mapper?.map((items) => {
+    return items[1].buttontext;
+  });
+  const SecondCaroDes = mapper?.map((items) => {
+    return <span>{items[1].description}</span>;
+  });
+  const SecondCaroTitle = mapper?.map((items) => {
+    return <span>{items[1].title1}</span>;
+  });
+
+  const ThirdCaroImageOne = mapper?.map((items) => {
+    return items[2].image1.url;
+  });
+  const ThirdCaroBtnText = mapper?.map((items) => {
+    return items[2].buttontext;
+  });
+  const ThirdCaroDes = mapper?.map((items) => {
+    return <span>{items[2].description}</span>;
+  });
+  const ThirdCaroTitle = mapper?.map((items) => {
+    return <span>{items[2].title1}</span>;
+  });
+
+  useEffect(() => {
+    getServerSideProps();
+  }, []);
+
   return (
     <>
       <section id="homeOne_banner">
@@ -55,15 +101,11 @@ const HomeBanner = () => {
             dots={true}
           >
             <div
-              className="banner-item banner-img-one bg-img"
+              className="banner-item "
               style={{
-                backgroundImage:
-                  "url(" +
-                  "https://images.unsplash.com/photo-1446694292248-2c2a7e575b1b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" +
-                  ")",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
+                backgroundImage: `url(${
+                  firstCaroImageOne ? firstCaroImageOne : `pending`
+                })`,
               }}
             >
               <div className="container">
@@ -72,17 +114,12 @@ const HomeBanner = () => {
                     <div className="col-lg-8 col-md-12 col-sm-12 col-12">
                       <div className="banner-text">
                         <h1>
-                          Shipping Products <br />
-                          Worldwide
+                          {firstCaroBtnTitle ? firstCaroBtnTitle : `pending`}
+                          <br />
                         </h1>
-                        <p>
-                          Cargo, also known as freight, refers to goods or
-                          produce being transported from one place to another –
-                          by water, air or land. Originally, the term “cargo”
-                          referred to goods being loaded onboard a vessel.
-                        </p>
+                        <p>{firstCaroBtnDes ? firstCaroBtnDes : `pending`}</p>
                         <Link className="btn btn-theme" to="/request_quote">
-                          Get A Quote
+                          {firstCaroBtnText ? firstCaroBtnText : `pending`}
                         </Link>
                       </div>
                     </div>
@@ -91,15 +128,11 @@ const HomeBanner = () => {
               </div>
             </div>
             <div
-              className="banner-item banner-img-two"
+              className="banner-item "
               style={{
-                backgroundImage:
-                  "url(" +
-                  "https://images.unsplash.com/photo-1642084399774-7bae8ede2477?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" +
-                  ")",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
+                backgroundImage: `url(${
+                  SecondCaroImageOne ? SecondCaroImageOne : `pending`
+                })`,
               }}
             >
               <div className="container">
@@ -108,19 +141,12 @@ const HomeBanner = () => {
                     <div className="col-lg-8 col-md-12 col-sm-12 col-12">
                       <div className="banner-text">
                         <h1>
-                          Shipping Products <br />
-                          Worldwide
+                          {SecondCaroTitle ? SecondCaroTitle : `pending`}
+                          <br />
                         </h1>
-                        <p>
-                          Cargo consists of bulk goods conveyed by water, air,
-                          or land. In economics, freight is cargo that is
-                          transported at a freight rate for commercial gain.
-                          Cargo was originally a shipload but now covers all
-                          types of freight, including transport by rail, van,
-                          truck, or intermodal container.
-                        </p>
+                        <p>{SecondCaroDes ? SecondCaroDes : `pending`}</p>
                         <Link className="btn btn-theme" to="/request_quote">
-                          Get A Quote
+                          {SecondCaroBtnText ? SecondCaroBtnText : `pending`}
                         </Link>
                       </div>
                     </div>
@@ -129,15 +155,11 @@ const HomeBanner = () => {
               </div>
             </div>
             <div
-              className="banner-item banner-img-three"
+              className="banner-item "
               style={{
-                backgroundImage:
-                  "url(" +
-                  "https://images.unsplash.com/photo-1609522886437-27a610fbe81d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80" +
-                  ")",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
+                backgroundImage: `url(${
+                  ThirdCaroImageOne ? ThirdCaroImageOne : `pending`
+                })`,
               }}
             >
               <div className="container">
@@ -146,16 +168,12 @@ const HomeBanner = () => {
                     <div className="col-lg-8 col-md-12 col-sm-12 col-12">
                       <div className="banner-text">
                         <h1>
-                          Shipping Products <br />
-                          Worldwide
+                          {ThirdCaroTitle ? ThirdCaroTitle : `pending`}
+                          <br />
                         </h1>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua quis ipsum suspendisse.
-                        </p>
+                        <p>{ThirdCaroDes ? ThirdCaroDes : `pending`}</p>
                         <Link className="btn btn-theme" to="/request_quote">
-                          Get A Quote
+                          {ThirdCaroBtnText ? ThirdCaroBtnText : `pending`}
                         </Link>
                       </div>
                     </div>

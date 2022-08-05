@@ -5,7 +5,7 @@
     client
       .query([Prismic.Predicates.at("document.type", "home")])
       .then((res) => {
-        setFetchData(res.results);
+        setFetchData(res);
       })
       .catch((err) => {
         console.log("err is ", err);
@@ -15,7 +15,20 @@
     getServerSideProps();
     setToggleFn(!toggleFn);
   }
-  console.log(fetchData, "data is here");
+  const mapper = fetchData?.results?.map((items) => {
+    return items?.data?.body[0]?.items;
+  });
+  const firstCaroImageOne = mapper?.map((items) => {
+    return items[0].image1.url;
+  });
+  const firstCaroBtnTitle = mapper?.map((items) => {
+    return <span>{items[0].title1}</span>;
+  });
+  useEffect(() => {
+    getServerSideProps();
+  }, []);
+
+
 
 
 
