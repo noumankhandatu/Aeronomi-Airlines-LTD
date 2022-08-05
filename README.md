@@ -1,3 +1,4 @@
+import Prismic from "prismic-javascript";
  const [toggleFn, setToggleFn] = useState(true);
   const [fetchData, setFetchData] = useState("");
   async function getServerSideProps() {
@@ -15,14 +16,11 @@
     getServerSideProps();
     setToggleFn(!toggleFn);
   }
-  const mapper = fetchData?.results?.map((items) => {
-    return items?.data?.body[0]?.items;
+  const title = fetchData?.results?.map((items) => {
+    return items.data.body[3];
   });
-  const firstCaroImageOne = mapper?.map((items) => {
-    return items[0].image1.url;
-  });
-  const firstCaroBtnTitle = mapper?.map((items) => {
-    return <span>{items[0].title1}</span>;
+  const mapheading = fetchData?.results?.map((items) => {
+    return items?.data?.mapheading;
   });
   useEffect(() => {
     getServerSideProps();
