@@ -2,32 +2,10 @@ import React, { useState, useEffect } from "react";
 // Import Counter
 import Counter from "./Counter";
 // About Img
-import img1 from "../../../assets/img/home1/about.png";
-import img2 from "../../../assets/img/home1/sign.png";
 import api from "../../../prismicApi";
 import Prismic from "prismic-javascript";
 
 // Counter Data
-const CounterData = [
-  {
-    countStart: 100,
-    countEnd: 12345,
-    heading: "COMPANY ESTABLISHED",
-    icon: " fas fa-building",
-  },
-  {
-    countStart: 100,
-    countEnd: 12345,
-    heading: "COUNTRIES SERVED",
-    icon: "fas fa-globe",
-  },
-  {
-    countStart: 100,
-    countEnd: 12345,
-    heading: "PORTS SERVED",
-    icon: " fas fa-building",
-  },
-];
 
 const HomeAbout = () => {
   const [toggleFn, setToggleFn] = useState(true);
@@ -47,6 +25,49 @@ const HomeAbout = () => {
     getServerSideProps();
     setToggleFn(!toggleFn);
   }
+
+  const countrytext = fetchData?.results?.map((items) => {
+    return items.data.countrytext;
+  });
+
+  const companytext = fetchData?.results?.map((items) => {
+    return items.data.companytext;
+  });
+
+  const portstext = fetchData?.results?.map((items) => {
+    return items.data.portstext;
+  });
+
+  const countrycounter = fetchData?.results?.map((items) => {
+    return items?.data?.countrycounter;
+  });
+  const companycounter = fetchData?.results?.map((items) => {
+    return items?.data?.companycounter1;
+  });
+  const portscounter1 = fetchData?.results?.map((items) => {
+    return items.data.portscounter1;
+  });
+  const CounterData = [
+    {
+      countStart: 0,
+      countEnd: companycounter ? companycounter : 123,
+      heading: companytext ? companytext : `pending`,
+      icon: " fas fa-building",
+    },
+    {
+      countStart: 0,
+      countEnd: countrycounter ? countrycounter : 123,
+      heading: countrytext ? countrytext : `pending`,
+      icon: "fas fa-globe",
+    },
+    {
+      countStart: 0,
+      countEnd: portscounter1 ? portscounter1 : 123,
+      heading: portstext ? portstext : `pending`,
+      icon: " fas fa-building",
+    },
+  ];
+
   const globalimage = fetchData?.results?.map((items) => {
     return items.data.globalimage.url;
   });
