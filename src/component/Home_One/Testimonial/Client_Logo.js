@@ -1,26 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Prismic from "prismic-javascript";
+
 // Import ClientLogo
 //  OwlCarousel Slider Import
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-const ClientLogo = [
-  {
-    img: "https://picsum.photos/200",
-  },
-  {
-    img: "https://picsum.photos/200",
-  },
-  {
-    img: "https://picsum.photos/200",
-  },
-  {
-    img: "https://picsum.photos/200",
-  },
-  {
-    img: "https://picsum.photos/200",
-  },
-];
+import api from "../../../prismicApi";
 
 const ClientLogos = () => {
   let responsiveOne = {
@@ -37,6 +23,60 @@ const ClientLogos = () => {
       items: 5,
     },
   };
+
+  const [toggleFn, setToggleFn] = useState(true);
+  const [fetchData, setFetchData] = useState("");
+  async function getServerSideProps() {
+    const client = Prismic.client(api);
+    client
+      .query([Prismic.Predicates.at("document.type", "home")])
+      .then((res) => {
+        setFetchData(res);
+      })
+      .catch((err) => {
+        console.log("err is ", err);
+      });
+  }
+  if (toggleFn) {
+    getServerSideProps();
+    setToggleFn(!toggleFn);
+  }
+  const firstimage = fetchData?.results?.map((items) => {
+    return items.data.body[5].items[0].firstimage.url;
+  });
+  const secondimage = fetchData?.results?.map((items) => {
+    return items.data.body[5].items[0].secondimage.url;
+  });
+  const thirdimage = fetchData?.results?.map((items) => {
+    return items.data.body[5].items[0].thirdimage.url;
+  });
+  const fourthimage = fetchData?.results?.map((items) => {
+    return items.data.body[5].items[0].fourthimage.url;
+  });
+  const fifthimage = fetchData?.results?.map((items) => {
+    return items.data.body[5].items[0].fifthimage.url;
+  });
+  const ClientLogo = [
+    {
+      img: firstimage ? firstimage : `pending`,
+    },
+    {
+      img: secondimage ? secondimage : `pending`,
+    },
+    {
+      img: thirdimage ? thirdimage : `pending`,
+    },
+    {
+      img: fourthimage ? fourthimage : `pending`,
+    },
+    {
+      img: fifthimage ? fifthimage : `pending`,
+    },
+  ];
+  useEffect(() => {
+    getServerSideProps();
+  }, []);
+
   return (
     <>
       <div id="client_logo_area">
