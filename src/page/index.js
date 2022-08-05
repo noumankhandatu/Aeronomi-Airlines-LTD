@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import HomeBanner from "../component/Home_One/Banner";
 import GetSchedule from "../component/Home_One/Get _Schedule";
 import LogisticsService from "../component/Home_One/Logistics_Services";
