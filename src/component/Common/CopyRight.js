@@ -9,7 +9,7 @@ const CopyRight = () => {
             <div className="col-lg-12">
               <div className="copy-right-area">
                 <p>
-                  Copyright @2021 <span>Transtics.</span> All Rights Reserved
+                  Copyright @2021 <span>AERONOMI AIRLINES LTD</span> All Rights Reserved
                 </p>
               </div>
             </div>
