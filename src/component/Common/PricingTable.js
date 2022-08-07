@@ -137,7 +137,12 @@ const PricingTable = () => {
   const featurefivest = fetchData?.results?.map((items) => {
     return items.data.body[6].items[2].featurefive;
   });
-
+  const buttonText = fetchData?.results?.map((items) => {
+    return items.data.body[6].items[2].buttontext;
+  });
+  const perMonth = fetchData?.results?.map((items) => {
+    return items.data.body[6].items[2].permonth;
+  });
   const pricingData = [
     {
       title: titleOne ? titleOne : `pending`,
@@ -197,7 +202,7 @@ const PricingTable = () => {
                       <span class="price-currency">$</span>
                       {data.amount}
                       <span class="price-duration text-primary-color">
-                        / Per Month
+                        {perMonth ? perMonth : `pending`}
                       </span>
                     </h3>
                   </div>
@@ -213,7 +218,7 @@ const PricingTable = () => {
                   </div>
                   <div class="table-footer">
                     <Link to="/pricing" class="btn btn-theme">
-                      Choose Plan
+                      {buttonText ? buttonText : `pending`}
                     </Link>
                   </div>
                 </div>
