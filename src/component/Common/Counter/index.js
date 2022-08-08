@@ -25,7 +25,12 @@ const CounterData = [
 const HomeTwoCounter = () => {
   return (
     <>
-      <section id="counter_area_main">
+      <section
+        id="counter_area_main"
+        style={{
+          backgroundImage: `url(${"https://transtic.netlify.app/static/media/track-bg.b82db464.jpg"})`,
+        }}
+      >
         <div className="container">
           <div className="row">
             {CounterData.map((data, index) => (
