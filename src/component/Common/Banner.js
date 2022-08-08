@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 const CommonBanner = (props) => {
   return (
     <>
-      <section id="inner_area_banner">
+      <section
+        id="inner_area_banner"
+        style={{ backgroundImage: `url(${props.image})` }}
+      >
         <div className="container">
           <div className="row">
             <div className="col-lg-12">

@@ -2,19 +2,19 @@ export const MenuData = [
   {
     name: "Home",
     href: "/",
-    has_children: true,
-    children: [
-      {
-        name: "Home Demo - 1",
-        href: "/",
-        has_children: false,
-      },
-      {
-        name: "Home Demo - 2",
-        href: "/home_two",
-        has_children: false,
-      },
-    ],
+    has_children: false,
+    // children: [
+    //   {
+    //     name: "Home",
+    //     href: "/",
+    //     has_children: false,
+    //   },
+    //   {
+    //     name: "Home Demo - 2",
+    //     href: "/home_two",
+    //     has_children: false,
+    //   },
+    // ],
   },
   {
     name: "About",
