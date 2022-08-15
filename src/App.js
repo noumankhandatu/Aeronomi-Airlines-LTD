@@ -51,6 +51,7 @@ const App = () => {
                 component={BlogWithSidebar}
               />
               <Route path="/blog_details" exact component={BlogDetails} />
+              {/* above is dynamic */}
               <Route path="/our_team" exact component={OurTeamArea} />
               <Route path="/testimonials" exact component={Testimonials} />
               <Route path="/gallery" exact component={Gallery} />
