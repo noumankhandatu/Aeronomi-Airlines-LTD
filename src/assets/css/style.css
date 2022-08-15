@@ -710,7 +710,7 @@ Search Overlay CSS
 
 .transTics-nav {
   background: #ffffff;
-  padding: 15px 0;
+  /* padding: 15px 0; */
 }
 .is-stick .transTics-nav {
   box-shadow: 0 0px 7px -2px #0000002b;

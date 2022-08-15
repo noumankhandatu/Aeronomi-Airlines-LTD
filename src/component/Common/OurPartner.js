@@ -39,7 +39,6 @@ const OurPartner = () => {
     setToggleFn(!toggleFn);
   }
   const firstimage = fetchData?.results?.map((items) => {
-    console.log(items.data, "Helo");
     return items.data.body[5].items[0].firstimage.url;
   });
   const secondimage = fetchData?.results?.map((items) => {

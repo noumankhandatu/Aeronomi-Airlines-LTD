@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 // Import Logo
-import logo from "../../../assets/img/logo.png";
+import logo from "../../../assets/img/logo.svg";
 // Import TopHeader
 import TopHeader from "../TopHeader";
 // Import MenuData
@@ -61,8 +61,7 @@ const Navbar = () => {
             <div className="container">
               <nav className="navbar navbar-expand-md navbar-light">
                 <Link className="navbar-brand" to="/">
-                  {/* <img src={logo} alt="logo" /> */}
-                  AERONOMI AIRLINES LTD
+                  <img src={logo} alt="logo" style={{ height: "100px" }} />
                 </Link>
 
                 <div className="mean-menu" id="navbarSupportedContent">

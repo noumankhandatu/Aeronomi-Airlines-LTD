@@ -23,8 +23,8 @@ const BlogLayout = () => {
     setToggleFn(!toggleFn);
   }
   // 1
-  const imageOne = fetchData?.results?.map((items) => {
-    return items.data.body[1].items[0].image.url;
+  const imgOne = fetchData?.results?.map((items) => {
+    return items.data.body[1].items[0].img.url;
   });
   const headingOne = fetchData?.results?.map((items) => {
     return items.data.body[1].items[0].heading;
@@ -48,8 +48,8 @@ const BlogLayout = () => {
     return items.data.body[1].items[0].day;
   });
   // 2
-  const imageTwo = fetchData?.results?.map((items) => {
-    return items.data.body[2].items[0].image.url;
+  const imgTwo = fetchData?.results?.map((items) => {
+    return items.data.body[2].items[0].img.url;
   });
   const headingTwo = fetchData?.results?.map((items) => {
     return items.data.body[2].items[0].heading;
@@ -73,8 +73,8 @@ const BlogLayout = () => {
     return items.data.body[2].items[0].day;
   });
   // 3
-  const imageThree = fetchData?.results?.map((items) => {
-    return items.data.body[2].items[1].image.url;
+  const imgThree = fetchData?.results?.map((items) => {
+    return items.data.body[2].items[1].img.url;
   });
   const headingThree = fetchData?.results?.map((items) => {
     return items.data.body[2].items[1].heading;
@@ -98,8 +98,8 @@ const BlogLayout = () => {
     return items.data.body[2].items[1].day;
   });
   // 4
-  const imageFour = fetchData?.results?.map((items) => {
-    return items.data.body[2].items[2].image.url;
+  const imgFour = fetchData?.results?.map((items) => {
+    return items.data.body[2].items[2].img.url;
   });
   const headingFour = fetchData?.results?.map((items) => {
     return items.data.body[2].items[2].heading;
@@ -123,8 +123,8 @@ const BlogLayout = () => {
     return items.data.body[2].items[2].day;
   });
   // 5
-  const imageFive = fetchData?.results?.map((items) => {
-    return items.data.body[2].items[3].image.url;
+  const imgFive = fetchData?.results?.map((items) => {
+    return items.data.body[2].items[3].img.url;
   });
   const headingFive = fetchData?.results?.map((items) => {
     return items.data.body[2].items[3].heading;
@@ -148,8 +148,8 @@ const BlogLayout = () => {
     return items.data.body[2].items[3].day;
   });
   // 6
-  const imageSix = fetchData?.results?.map((items) => {
-    return items.data.body[2].items[4].image.url;
+  const imgSix = fetchData?.results?.map((items) => {
+    return items.data.body[2].items[4].img.url;
   });
   const headingSix = fetchData?.results?.map((items) => {
     return items.data.body[2].items[4].heading;
@@ -172,9 +172,9 @@ const BlogLayout = () => {
   const daySix = fetchData?.results?.map((items) => {
     return items.data.body[2].items[4].day;
   });
-   // 7
-   const imageSeven = fetchData?.results?.map((items) => {
-    return items.data.body[2].items[5].image.url;
+  // 7
+  const imgSeven = fetchData?.results?.map((items) => {
+    return items.data.body[2].items[5].img.url;
   });
   const headingSeven = fetchData?.results?.map((items) => {
     return items.data.body[2].items[5].heading;
@@ -199,7 +199,7 @@ const BlogLayout = () => {
   });
   const BlogData = [
     {
-      img: imageOne ? imageOne : `pending`,
+      img: imgOne ? imgOne : `pending`,
       heading: headingOne ? headingOne : `pending`,
       para: paraOne ? paraOne : `pending`,
       name: nameOne ? nameOne : `pending`,
@@ -209,7 +209,7 @@ const BlogLayout = () => {
       day: dayOne ? dayOne : `pending`,
     },
     {
-      img: imageTwo ? imageTwo : `pending`,
+      img: imgTwo ? imgTwo : `pending`,
       heading: headingTwo ? headingTwo : `pending`,
       para: paraTwo ? paraTwo : `pending`,
       name: nameTwo ? nameTwo : `pending`,
@@ -219,7 +219,7 @@ const BlogLayout = () => {
       day: dayTwo ? dayTwo : `pending`,
     },
     {
-      img: imageThree ? imageThree : `pending`,
+      img: imgThree ? imgThree : `pending`,
       heading: headingThree ? headingThree : `pending`,
       para: paraThree ? paraThree : `pending`,
       name: nameThree ? nameThree : `pending`,
@@ -229,7 +229,7 @@ const BlogLayout = () => {
       day: dayThree ? dayThree : `pending`,
     },
     {
-      img: imageFour ? imageFour : `pending`,
+      img: imgFour ? imgFour : `pending`,
       heading: headingFour ? headingFour : `pending`,
       para: paraFour ? paraFour : `pending`,
       name: nameFour ? nameFour : `pending`,
@@ -239,7 +239,7 @@ const BlogLayout = () => {
       day: dayFour ? dayFour : `pending`,
     },
     {
-      img: imageFive ? imageFive : `pending`,
+      img: imgFive ? imgFive : `pending`,
       heading: headingFive ? headingFive : `pending`,
       para: paraFive ? paraFive : `pending`,
       name: nameFive ? nameFive : `pending`,
@@ -249,7 +249,7 @@ const BlogLayout = () => {
       day: dayFive ? dayFive : `pending`,
     },
     {
-      img: imageSix ? imageSix : `pending`,
+      img: imgSix ? imgSix : `pending`,
       heading: headingSix ? headingSix : `pending`,
       para: paraSix ? paraSix : `pending`,
       name: nameSix ? nameSix : `pending`,
@@ -259,7 +259,7 @@ const BlogLayout = () => {
       day: daySix ? daySix : `pending`,
     },
     {
-      img: imageSeven ? imageSeven : `pending`,
+      img: imgSeven ? imgSeven : `pending`,
       heading: headingSeven ? headingSeven : `pending`,
       para: paraSeven ? paraSeven : `pending`,
       name: nameSeven ? nameSeven : `pending`,
