@@ -37,8 +37,7 @@ const Subscribe = () => {
     getServerSideProps();
   }, []);
 
-  const car =
-    "https://transtic.netlify.app/static/media/subscrib-bg.dea1f23c.png";
+
   return (
     <>
       <section
