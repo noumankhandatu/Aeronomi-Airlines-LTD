@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SectionHeading from "../../Common/SectionHeading";
 import TeamCard from "../../Common/Team/TeamCard";
-import { TeamData } from "../../Common/Team/TeamData";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";

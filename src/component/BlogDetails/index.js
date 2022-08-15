@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 import BlogSidebar from "../Common/BlogSidebar";
 import AllComment from "../BlogDetails/AllComment";
 import ReplayForm from "../BlogDetails/ReplayForm";
-// Import Blog Details Img
-import DetailsImg from "../../assets/img/blog/blog_singal1.jpg";
 import Prismic from "prismic-javascript";
 import api from "../../prismicApi";
 const BlogDetailsArea = () => {

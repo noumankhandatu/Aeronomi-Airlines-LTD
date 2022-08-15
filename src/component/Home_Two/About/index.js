@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 // Import Img
-import img1 from "../../../assets/img/common/about-service.jpg";
 import Prismic from "prismic-javascript";
 import api from "../../../prismicApi";
 
