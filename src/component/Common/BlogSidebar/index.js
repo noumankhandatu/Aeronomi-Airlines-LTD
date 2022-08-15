@@ -109,7 +109,10 @@ const BlogSidebar = () => {
                 <div className="popular_post_item" key={index}>
                   <div className="populer_post_img">
                     <Link to="/blog_details">
-                      <img src={data.bgimage ? data.bgimage.url : `pending`} />
+                      <img
+                        src={data.bgimage ? data.bgimage.url : `pending`}
+                        alt="img"
+                      />
                     </Link>
                   </div>
                   <div className="popular_post_text">
