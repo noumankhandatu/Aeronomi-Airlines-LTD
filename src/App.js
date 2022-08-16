@@ -55,8 +55,8 @@ const App = () => {
               <Route path="/pricing" exact component={PricingContent} />
               {/* <Route path="/request_quote" exact component={RequestQuote} /> */}
               <Route path="/testimonials" exact component={Testimonials} />
-              {/* currently */}
               <Route path="/gallery" exact component={Gallery} />
+              {/* currently */}
               <Route path="/faqs" exact component={Faqs} />
               <Route path="/track_ship" exact component={TrackYourShip} />
               <Route path="/signup" exact component={SignUp} />

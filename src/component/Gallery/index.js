@@ -1,16 +1,8 @@
 import React, { useState, useEffect } from "react";
-// Import Gallery Img
-import img1 from "../../assets/img/gallery/gallery-1.jpg";
-import img2 from "../../assets/img/gallery/gallery-2.jpg";
-import img3 from "../../assets/img/gallery/gallery-3.jpg";
-import img4 from "../../assets/img/gallery/gallery-4.jpg";
-import img5 from "../../assets/img/gallery/gallery-5.jpg";
-import img6 from "../../assets/img/gallery/gallery-6.jpg";
 import ReactFancyBox from "react-fancybox";
 import Prismic from "prismic-javascript";
 import "react-fancybox/lib/fancybox.css";
 import api from "../../prismicApi";
-// Import ReactFancyBox
 
 const GalleryImages = () => {
   const [toggleFn, setToggleFn] = useState(true);
