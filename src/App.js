@@ -51,14 +51,14 @@ const App = () => {
                 component={BlogWithSidebar}
               />
               <Route path="/blog_details" exact component={BlogDetails} />
-              {/* currently */}
               <Route path="/our_team" exact component={OurTeamArea} />
+              <Route path="/pricing" exact component={PricingContent} />
+              {/* <Route path="/request_quote" exact component={RequestQuote} /> */}
+              {/* currently */}
               <Route path="/testimonials" exact component={Testimonials} />
               <Route path="/gallery" exact component={Gallery} />
               <Route path="/faqs" exact component={Faqs} />
               <Route path="/track_ship" exact component={TrackYourShip} />
-              <Route path="/pricing" exact component={PricingContent} />
-              <Route path="/request_quote" exact component={RequestQuote} />
               <Route path="/signup" exact component={SignUp} />
               <Route path="/signIn" exact component={SignIn} />
               <Route path="/privacyPolicy" exact component={PrivacyPolicy} />
