@@ -48,7 +48,7 @@ const AllComment = () => {
                       <div className="comment_heading_flex">
                         <h5>{person ? person : `pending`} </h5>
                         <a href="#!">
-                          <i className="fas fa-share"></i> 
+                          <i className="fas fa-share"></i>
                         </a>
                       </div>
                       <p>{comment ? comment : `pending`}</p>
