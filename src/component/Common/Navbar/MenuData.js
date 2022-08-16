@@ -75,11 +75,11 @@ export const MenuData = [
         href: "/pricing",
         has_children: false,
       },
-      {
-        name: "Request Quote",
-        href: "/request_quote",
-        has_children: false,
-      },
+      // {
+      //   name: "Request Quote",
+      //   href: "/request_quote",
+      //   has_children: false,
+      // },
       {
         name: "Testimonials",
         href: "/testimonials",
