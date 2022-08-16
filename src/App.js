@@ -29,7 +29,7 @@ import TermsCondition from "./page/TermsCondition";
 import Error from "./page/Error";
 import Contact from "./page/Contact";
 import PricingContent from "./page/Pricing";
-import RequestQuote from "./page/RequestQuote";
+// import RequestQuote from "./page/RequestQuote";
 // Import ScrollToTop Components
 import ScrollToTop from "./component/ScrollToTop";
 const App = () => {
@@ -54,8 +54,8 @@ const App = () => {
               <Route path="/our_team" exact component={OurTeamArea} />
               <Route path="/pricing" exact component={PricingContent} />
               {/* <Route path="/request_quote" exact component={RequestQuote} /> */}
-              {/* currently */}
               <Route path="/testimonials" exact component={Testimonials} />
+              {/* currently */}
               <Route path="/gallery" exact component={Gallery} />
               <Route path="/faqs" exact component={Faqs} />
               <Route path="/track_ship" exact component={TrackYourShip} />
