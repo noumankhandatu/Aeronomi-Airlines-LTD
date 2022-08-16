@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
-//Import ClientCard
 import ClientCard from "../Common/Client/ClientCard";
-//Import ClientsData
-import { ClientsData } from "../Common/Client/ClientData";
-//  OwlCarousel Slider Import
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
