@@ -1,11 +1,31 @@
-import React from "react";
-// import Blogger Img
-import Blogger1 from "../../assets/img/blog/bloger_1.jpg";
-import Blogger2 from "../../assets/img/blog/bloger_2.jpg";
-import Blogger3 from "../../assets/img/blog/bloger_3.jpg";
-import Blogger4 from "../../assets/img/blog/bloger_4.jpg";
-
+import React, { useState, useEffect } from "react";
+import Prismic from "prismic-javascript";
+import api from "../../prismicApi";
 const AllComment = () => {
+  const [toggleFn, setToggleFn] = useState(true);
+  const [fetchData, setFetchData] = useState("");
+  async function getServerSideProps() {
+    const client = Prismic.client(api);
+    client
+      .query([Prismic.Predicates.at("document.type", "blog")])
+      .then((res) => {
+        setFetchData(res);
+      })
+      .catch((err) => {
+        console.log("err is ", err);
+      });
+  }
+  if (toggleFn) {
+    getServerSideProps();
+    setToggleFn(!toggleFn);
+  }
+  const Data = fetchData?.results?.map((items) => {
+    return items?.data?.body[8]?.items;
+  });
+
+  useEffect(() => {
+    getServerSideProps();
+  }, []);
   return (
     <>
       <div className="blog_single_item">
@@ -13,24 +33,34 @@ const AllComment = () => {
           <h3>All Comments</h3>
         </div>
         <div className="all_comment_wrappers">
-          <div className="comment_item">
-            <img src={Blogger1} alt="Blogger_Img" />
-            <div className="comments_text">
-              <div className="comment_heading_flex">
-                <h5>Saiful Kazi</h5>
-                <a href="#!">
-                  <i className="fas fa-share"></i> Reply
-                </a>
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Praesent vehicula mauris ac facilisis congue. Fusce sem enim,
-                rhoncus volutpat condimentum ac.
-              </p>
-            </div>
-          </div>
-          <div className="comment_item replay_comment">
-            <img src={Blogger2} alt="Blogger_Img" />
+          {/* question */}
+          {Data &&
+            Data[0]?.map((items, i) => {
+              const { image1, person, comment } = items;
+              return (
+                <>
+                  <div className="comment_item">
+                    <img
+                      src={image1.url ? image1.url : `pending`}
+                      alt="Blogger_Img"
+                    />
+                    <div className="comments_text">
+                      <div className="comment_heading_flex">
+                        <h5>{person ? person : `pending`} </h5>
+                        <a href="#!">
+                          <i className="fas fa-share"></i> 
+                        </a>
+                      </div>
+                      <p>{comment ? comment : `pending`}</p>
+                    </div>
+                  </div>
+                </>
+              );
+            })}
+
+          {/* answer */}
+          {/* <div className="comment_item replay_comment">
+            <img src={""} alt="Blogger_Img" />
             <div className="comments_text">
               <div className="comment_heading_flex">
                 <h5>Suddipta Dor</h5>
@@ -43,40 +73,8 @@ const AllComment = () => {
                 Praesent vehicula mauris ac facilisis congue. Fusce sem enim,
                 rhoncus volutpat condimentum ac.
               </p>
-            </div>  
-          </div>
-          <div className="comment_item">
-            <img src={Blogger3} alt="Blogger_Img" />
-            <div className="comments_text">
-              <div className="comment_heading_flex">
-                <h5>Natasha Lawes</h5>
-                <a href="#!">
-                  <i className="fas fa-share"></i> Reply
-                </a>
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Praesent vehicula mauris ac facilisis congue. Fusce sem enim,
-                rhoncus volutpat condimentum ac.
-              </p>
             </div>
-          </div>
-          <div className="comment_item replay_comment">
-            <img src={Blogger4} alt="Blogger_Img" />
-            <div className="comments_text">
-              <div className="comment_heading_flex">
-                <h5>Hadayet Ali</h5>
-                <a href="#!">
-                  <i className="fas fa-share"></i> Reply
-                </a>
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Praesent vehicula mauris ac facilisis congue. Fusce sem enim,
-                rhoncus volutpat condimentum ac.
-              </p>
-            </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
