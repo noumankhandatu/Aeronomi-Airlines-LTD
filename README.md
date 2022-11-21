@@ -1,33 +1,4 @@
-import Prismic from "prismic-javascript";
- const [toggleFn, setToggleFn] = useState(true);
-  const [fetchData, setFetchData] = useState("");
-  async function getServerSideProps() {
-    const client = Prismic.client(api);
-    client
-      .query([Prismic.Predicates.at("document.type", "home")])
-      .then((res) => {
-        setFetchData(res);
-      })
-      .catch((err) => {
-        console.log("err is ", err);
-      });
-  }
-  if (toggleFn) {
-    getServerSideProps();
-    setToggleFn(!toggleFn);
-  }
-  const title = fetchData?.results?.map((items) => {
-    return items.data.body[3];
-  });
-  const mapheading = fetchData?.results?.map((items) => {
-    return items?.data?.mapheading;
-  });
-  useEffect(() => {
-    getServerSideProps();
-  }, []);
-
-
-
+PRISMIC INTEGRATION WITH NEXT
 
 
 # Getting Started with Create React App
@@ -100,3 +71,30 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+import Prismic from "prismic-javascript";
+ const [toggleFn, setToggleFn] = useState(true);
+  const [fetchData, setFetchData] = useState("");
+  async function getServerSideProps() {
+    const client = Prismic.client(api);
+    client
+      .query([Prismic.Predicates.at("document.type", "home")])
+      .then((res) => {
+        setFetchData(res);
+      })
+      .catch((err) => {
+        console.log("err is ", err);
+      });
+  }
+  if (toggleFn) {
+    getServerSideProps();
+    setToggleFn(!toggleFn);
+  }
+  const title = fetchData?.results?.map((items) => {
+    return items.data.body[3];
+  });
+  const mapheading = fetchData?.results?.map((items) => {
+    return items?.data?.mapheading;
+  });
+  useEffect(() => {
+    getServerSideProps();
+  }, []);
